@@ -18,5 +18,4 @@ export class PagesComponent implements OnInit {
       { value: '2', view: 'Two' }
     ];
   }
-
 }
