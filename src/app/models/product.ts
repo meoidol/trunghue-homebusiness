@@ -1,7 +1,11 @@
 export interface Product {
     id?: number;
-    name?: string;
+    category_id?: number;
+    supplier_id?: number;
     type_id?: number;
-    material_id?: number;
-    datetime?: string;
+    name?: string;
+    cost?: number;
+    price?: number;
+    description?: string;
+    status?: number;
 }
