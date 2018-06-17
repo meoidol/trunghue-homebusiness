@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {UiService} from '../../services/ui/ui.service';
+import { Component, OnInit } from '@angular/core';
+import { UiService } from '../../services/ui/ui.service';
 
 @Component({
   selector: 'app-add-card',
   templateUrl: './add-card.component.html',
-  styleUrls: ['./add-card.component.css']
+  styleUrls: ['./add-card.component.scss']
 })
 export class AddCardComponent implements OnInit {
 

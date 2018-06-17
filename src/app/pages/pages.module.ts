@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { UiService } from './../services/ui/ui.service';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,9 @@ import {
   MatMenuModule,
   MatGridListModule,
   MatTooltipModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatToolbarModule,
+  MatTreeModule
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,9 +33,18 @@ import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { routing } from './pages.routing';
 import { WeatherService } from '../services/weather/weather.service';
+import { WeatherCardComponent } from '../layouts/weather-card/weather-card.component';
+import { AddCardComponent } from '../layouts/add-card/add-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   imports: [
+    FormsModule,
+    RouterModule,
+    HttpModule,
+    HttpClientModule,
+    routing,
     CommonModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -42,11 +54,10 @@ import { WeatherService } from '../services/weather/weather.service';
     MatCheckboxModule,
     MatMenuModule,
     MatGridListModule,
+    MatToolbarModule,
     MatTooltipModule,
     MatSidenavModule,
-    FormsModule,
-    RouterModule,
-    routing
+    MatTreeModule
   ],
   declarations: [
     PagesComponent,
@@ -58,7 +69,10 @@ import { WeatherService } from '../services/weather/weather.service';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    WeatherCardComponent,
+    AddCardComponent,
+    DetailsComponent
   ],
   providers: [
     UiService,

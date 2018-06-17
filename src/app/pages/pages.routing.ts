@@ -1,6 +1,7 @@
 import { PagesComponent } from './pages.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
+import { DetailsComponent } from './details/details.component';
 
 export const routes: Routes = [
   {
@@ -21,7 +22,8 @@ export const routes: Routes = [
     // },
     // { path: 'my-store', redirectTo: 'lot-management', pathMatch: 'full' }
     // ]
-  }
+  },
+  { path: 'details/:city', component: DetailsComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

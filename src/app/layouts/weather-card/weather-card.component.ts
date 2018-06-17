@@ -1,12 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {WeatherService} from '../../services/weather/weather.service';
-import {UiService} from '../../services/ui/ui.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { WeatherService } from '../../services/weather/weather.service';
+import { UiService } from '../../services/ui/ui.service';
 
 @Component({
   selector: 'app-weather-card',
   templateUrl: './weather-card.component.html',
-  styleUrls: ['./weather-card.component.css']
+  styleUrls: ['./weather-card.component.scss']
 })
 export class WeatherCardComponent implements OnInit, OnDestroy {
 
@@ -17,8 +17,8 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
   darkMode: boolean;
 
   constructor(public weather: WeatherService,
-              public router: Router,
-              public ui: UiService) {
+    public router: Router,
+    public ui: UiService) {
   }
 
   ngOnInit() {
