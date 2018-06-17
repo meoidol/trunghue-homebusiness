@@ -62,14 +62,21 @@
     </div>
 
     <h3 class="date__text">Today</h3>
-
+    <div>
+        <mat-form-field>
+            <mat-select placeholder="{{languageTitle}}" [(value)]="langSelected" (selectionChange)="changeLanguage()">
+                <mat-option value="en">{{'language.en' | translate}}</mat-option>
+                <mat-option value="vi">{{'language.vi' | translate}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
     <div class="mode-toggle__container">
-        <span class="mode-toggle__text">Light</span>
+        <span class="mode-toggle__text">{{'toggle.light' | translate}}</span>
         <label class="toggle-button__container">
             <input (click)="modeToggleSwitch()" type="checkbox" class="mode-toggle__input" />
             <span [ngClass]="{'mode-toggle__bg-checked': darkModeActive}" class="mode-toggle__bg"></span>
             <span [ngClass]="{'mode-toggle__circle-checked': darkModeActive}" class="mode-toggle__circle"></span>
         </label>
-        <span class="mode-toggle__text">Dark</span>
+        <span class="mode-toggle__text">{{'toggle.dark' | translate}}</span>
     </div>
 </header>

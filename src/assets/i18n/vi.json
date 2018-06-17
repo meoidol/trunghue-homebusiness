@@ -1,0 +1,47 @@
+{
+    "common": {
+        "action": "Action",
+        "actions": {
+            "add": "New",
+            "edit": "Edit"
+        }
+    },
+    "top-bar": {
+        "sign-out": "Sign out"
+    },
+    "language": {
+        "title": "Thay đổi ngôn ngữ",
+        "en": "English",
+        "vi": "Tiếng Việt"
+    },
+    "toggle": {
+        "light": "Sáng",
+        "dark": "Tối"
+    },
+    "actions": {
+        "cancel": "Cancel",
+        "save": "Save",
+        "ok": "OK",
+        "unpublish": "Unpublish",
+        "publish": "Publish",
+        "close": "Close",
+        "upload": "Upload",
+        "export": "Export",
+        "search": "Search"
+    },
+    "login": {
+        "title": "Sign in",
+        "username": "Account",
+        "password": "Password",
+        "sign_in": "Sign in",
+        "forgot_password": "Forgot password?",
+        "error": "Wrong username/password!"
+    },
+    "general": {
+        "menu": {
+            "lot-management": "Lot management",
+            "order-management": "Order management",
+            "my-store": "Store"
+        }
+    }
+}

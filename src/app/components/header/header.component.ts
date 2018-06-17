@@ -1,8 +1,9 @@
-import { UiService } from './../../services/ui/ui.service';
 import { BehaviorSubject, Observable, of as observableOf } from 'rxjs';
 import { Component, OnInit, Injectable } from '@angular/core';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlattener, MatTreeFlatDataSource } from '@angular/material';
+import { TranslateService } from '@ngx-translate/core';
+import { UiService } from './../../services/ui/ui.service';
 
 /**
  * File node data with nested structure.
@@ -129,9 +130,13 @@ export class HeaderComponent implements OnInit {
   dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
   darkModeActive: boolean;
   showMenu = false;
+  languageTitle: string;
+  langSelected: string;
+
   constructor(
+    database: FileDatabase,
     public _ui: UiService,
-    database: FileDatabase
+    public translate: TranslateService
   ) {
     this.treeFlattener = new MatTreeFlattener(this.transformer, this._getLevel,
       this._isExpandable, this._getChildren);
@@ -156,10 +161,15 @@ export class HeaderComponent implements OnInit {
     this._ui.darkModeState.subscribe((isDark) => {
       this.darkModeActive = isDark;
     });
+    this.translate.get('language.title').subscribe(title => this.languageTitle = title);
   }
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
+  }
+
+  modeToggleSwitch() {
+    this._ui.darkModeState.next(!this.darkModeActive);
   }
 
   private _getLevel = (node: FileFlatNode) => {
@@ -176,5 +186,9 @@ export class HeaderComponent implements OnInit {
 
   hasChild = (_: number, _nodeData: FileFlatNode) => {
     return _nodeData.expandable;
+  }
+
+  changeLanguage() {
+    this.translate.use(this.langSelected);
   }
 }

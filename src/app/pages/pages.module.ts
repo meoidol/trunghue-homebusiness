@@ -35,8 +35,9 @@ import { routing } from './pages.routing';
 import { WeatherService } from '../services/weather/weather.service';
 import { WeatherCardComponent } from '../layouts/weather-card/weather-card.component';
 import { AddCardComponent } from '../layouts/add-card/add-card.component';
-import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './details/details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppTranslationModule } from '../app.translation.module';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { DetailsComponent } from './details/details.component';
     HttpModule,
     HttpClientModule,
     routing,
+    AppTranslationModule,
     CommonModule,
     BrowserAnimationsModule,
     MatInputModule,

@@ -25,8 +25,4 @@ export class PagesComponent implements OnInit {
   toggleMenu() {
     this.showMenu = !this.showMenu;
   }
-
-  modeToggleSwitch() {
-    this.ui.darkModeState.next(!this.darkModeActive);
-  }
 }
